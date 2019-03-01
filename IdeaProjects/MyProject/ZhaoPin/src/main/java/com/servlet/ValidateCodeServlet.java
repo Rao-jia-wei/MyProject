@@ -1,5 +1,8 @@
 package com.servlet;
 
+import com.sun.image.codec.jpeg.JPEGCodec;
+import com.sun.image.codec.jpeg.JPEGImageEncoder;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -40,7 +43,7 @@ public class ValidateCodeServlet extends HttpServlet{
 
 		resp.setContentType("image/jpeg"); //设置响应头contenType类型
 
-		ServletOutputStream out = resp.getOutputStream(); //获取一个二进制输出流对象
+//		ServletOutputStream out = resp.getOutputStream(); //获取一个二进制输出流对象
 
 		int width = 70;  //设置图片的宽度
 
@@ -115,8 +118,10 @@ public class ValidateCodeServlet extends HttpServlet{
 		System.out.println("生成的随机数code："+code);
 		HttpSession session = req.getSession();
 		session.setAttribute("code", code); //产生验证码保存在session会话中
-		ImageIO.write(imgbuf, "JPEG", out);
-		out.close();
+//		ImageIO.write(imgbuf, "JPEG", resp.getOutputStream());
+//		resp.getOutputStream().close();
+		JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(resp.getOutputStream());
+		encoder.encode(imgbuf);
 	}
 
 	/**

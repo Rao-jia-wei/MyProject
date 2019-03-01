@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="span1">
         <label class="tn-form-label">验证码：</label>
         <input class="tn-textbox-long"  type="text"  id="code" name="code" />
-        <span> <img src="code.do" title="点击换一换" id="img" onclick="changecode(this)"><a href="javascript:;" onclick="changecode(this)" >看不清？</a> </span> 
+        <span> <img src="code.do" title="点击换一换" id="img" onclick="changecode(this)"><a href="javascript:;" onclick="changecode(this)" >看不清？</a> </span>
       </div>
         
       <div class="tn-form-row-button">

@@ -17,7 +17,7 @@ public class ResumeDao {
 	 */
 	public ResumeBasicinfo isExitResme(int applicantID){
 		//插入语句
-		String sql = "select * from TB_RESUME_BASICINFO where applicant_id =?";
+		String sql = "select * from tb_resume_basicinfo where applicant_id =?";
 
 		Connection con = null;
 
@@ -124,7 +124,7 @@ public class ResumeDao {
 	public ResumeBasicinfo queryResuemBasicInfo(int basicinfo_id){
 
 		//插入语句
-		String sql = "select * from TB_RESUME_BASICINFO where BASICINFO_ID =?"; // 登录的sql语句
+		String sql = "select * from tb_resume_basicinfo where BASICINFO_ID =?"; // 登录的sql语句
 
 		Connection con = null;
 
@@ -173,7 +173,7 @@ public class ResumeDao {
 	 */
 	public void updateHeadShot(int basicinfoId,String newFileName){
 		//插入语句
-		String sql = "update TB_RESUME_BASICINFO set HEAD_SHOT=? where BASICINFO_ID =?"; //
+		String sql = "update tb_resume_basicinfo set HEAD_SHOT=? where BASICINFO_ID =?"; //
 
 		Connection con = null;
 
@@ -208,7 +208,7 @@ public class ResumeDao {
 	 */
 	public void update(ResumeBasicinfo basicinfo){
 		//插入语句
-		String sql = "update TB_RESUME_BASICINFO set applicant_id=?, realname=?, gender=?, birthday=?, " +
+		String sql = "update tb_resume_basicinfo set applicant_id=?, realname=?, gender=?, birthday=?, " +
 				"current_loc=?, resident_loc=?, telephone=?, email=?, job_intension=?, job_experience=?, head_shot=? where BASICINFO_ID =?";
 
 		Connection con = null;

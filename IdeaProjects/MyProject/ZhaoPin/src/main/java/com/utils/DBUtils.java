@@ -22,7 +22,7 @@ public class DBUtils {
 
 	public static String url="jdbc:mysql://127.0.0.1:3306/offter?useUnicode=true&characterEncoding=utf-8";
 
-	public static String driver="com.mysql.jdbc.Driver";
+	public static String driver="com.mysql.cj.jdbc.Driver";
 
 	static{
 		try {
